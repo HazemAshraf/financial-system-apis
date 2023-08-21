@@ -1,0 +1,5 @@
+INSERT INTO customer(id ,created_at, updated_at, name)
+	VALUES (1, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'Arisha Barron'),
+	 (2, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,'Branden Gibson'),
+	 (3, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,'Rhonda Church'),
+	 (4, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,'Germany Georgina');
