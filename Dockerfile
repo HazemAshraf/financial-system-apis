@@ -1,0 +1,13 @@
+FROM maven:3.8-openjdk-8
+
+WORKDIR ./
+COPY . .
+ENV SERVER_PORT ${SERVER_PORT}
+ENV SERVER_CONTEXT ${SERVER_CONTEXT}
+ENV DB_HOST ${DB_HOST}
+ENV DB_PORT ${DB_PORT}
+ENV DB_NAME ${DB_NAME}
+ENV DB_USERNAME ${DB_USERNAME}
+ENV DB_PASSWORD ${DB_PASSWORD}
+RUN mvn clean install -DskipTests
+CMD java -jar ./target/bank-system.jar

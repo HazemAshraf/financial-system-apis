@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=bank_system
+      - PGDATA=/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+  application-server:
+    build: ./
+    container_name: bank-system-server
+    ports:
+      - "8084:8083"
+    depends_on:
+      - db
+    volumes:
+      - /Users/hazem.ashraf/.m2:/root/.m2/
+    environment:
+      - SERVER_PORT=8083
+      - SERVER_CONTEXT=/api/v1
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=bank_system
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=1234
+    restart: unless-stopped
