@@ -7,7 +7,6 @@ import com.bank.system.exception.custom.CurrencyTransferShouldSameException;
 import com.bank.system.exception.custom.SameAccountException;
 import com.bank.system.exception.general.ProblemRunTimeException;
 import org.junit.Test;
-import org.junit.jupiter.api.DisplayName;
 
 import java.math.BigDecimal;
 

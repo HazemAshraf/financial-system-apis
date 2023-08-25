@@ -1,10 +1,8 @@
 package com.bank.system.controller;
 
-import com.bank.system.exception.general.RestExceptionHandler;
-import com.bank.system.exception.general.NotFoundException;
 import com.bank.system.dto.request.CreateBankAccount;
-import com.bank.system.dto.request.CreateTransferTransaction;
-import com.bank.system.service.TransactionService;
+import com.bank.system.exception.general.NotFoundException;
+import com.bank.system.exception.general.RestExceptionHandler;
 import com.bank.system.service.impl.BankAccountServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -21,11 +19,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static com.bank.system.mockData.AccountMock.*;
-import static com.bank.system.mockData.TransactionsMock.transactionListResponse;
-import static com.bank.system.mockData.TransferModelMock.transferModel;
 import static org.hamcrest.core.StringContains.containsString;
-import static org.mockito.ArgumentMatchers.*;
-import static org.mockito.Mockito.doNothing;
+import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.isA;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

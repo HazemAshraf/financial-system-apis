@@ -13,7 +13,6 @@ import java.util.Date;
 import java.util.List;
 
 import static com.bank.system.mockData.AccountMock.createdAccount;
-import static com.bank.system.mockData.BankAccountMock.ACCOUNT_200EGP;
 
 public class TransactionsMock {
 

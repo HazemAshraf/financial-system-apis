@@ -1,6 +1,7 @@
 package com.bank.system.controller;
 
 import com.bank.system.dto.request.CreateTransferTransaction;
+import com.bank.system.dto.response.GetTransactions;
 import com.bank.system.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -8,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/transaction")
@@ -48,7 +50,7 @@ public class TransactionController {
      */
 
     @GetMapping
-    public ResponseEntity<?> getTransactionsByAccountId(@Valid @RequestParam("accountId") Long accountId, @Valid @RequestParam(value = "page") int page, @Valid @RequestParam("pageSize") int pageSize) {
+    public ResponseEntity<List<GetTransactions>> getTransactionsByAccountId(@Valid @RequestParam("accountId") Long accountId, @Valid @RequestParam(value = "page") int page, @Valid @RequestParam("pageSize") int pageSize) {
         return new ResponseEntity<>(transactionServiceImpl.getTransactions(accountId, page, pageSize), HttpStatus.OK);
     }
 

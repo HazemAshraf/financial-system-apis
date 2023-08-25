@@ -58,7 +58,7 @@ public class BankAccountController {
      * or Not Found (status code 404)
      */
     @GetMapping(value = "/{accountId}")
-    public ResponseEntity<?> getBankAccount(@PathVariable("accountId") Long accountId) {
+    public ResponseEntity<com.bank.system.dto.response.CreateBankAccount> getBankAccount(@PathVariable("accountId") Long accountId) {
         return new ResponseEntity<>(bankAccountServiceImpl.getBankAccount(accountId), HttpStatus.OK);
     }
 
