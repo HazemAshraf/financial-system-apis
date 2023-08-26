@@ -33,7 +33,7 @@ public class TransactionController {
     @PostMapping
     public ResponseEntity<?> createTransferTransaction(@Valid @RequestBody CreateTransferTransaction createTransferTransaction) {
         transactionServiceImpl.transferTransaction(createTransferTransaction);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     /**

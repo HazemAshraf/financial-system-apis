@@ -75,6 +75,6 @@ public class TransactionControllerTest {
         doNothing().when(transactionServiceImpl).transferTransaction(isA(CreateTransferTransaction.class));
         mocMvc.perform(post(BASE_URL + "/transaction").contentType(MediaType.APPLICATION_JSON).content(json))
                 .andDo(print())
-                .andExpect(status().isOk());
+                .andExpect(status().isCreated());
     }
 }
